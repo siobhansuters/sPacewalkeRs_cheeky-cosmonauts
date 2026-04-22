@@ -6,7 +6,7 @@ library(jsonlite)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
-library(tidyr)
+
 
 
 output_dir <- '/home/sarah/Projects/spacewalk-analysis/results/figures/'
@@ -80,7 +80,7 @@ p3 <- ggplot(df_scatter, aes(x = date, y = duration_hrs, colour = country)) +
   geom_smooth(method = "loess", se = FALSE, linewidth = 1) +
   scale_colour_manual(values = colour_map) +
   theme_minimal(base_size = 10)
-p3
+
 ggsave("results/figures/fig_duration_over_time.png", plot = p3,
        width = 8, height = 4, dpi = 150)
 
