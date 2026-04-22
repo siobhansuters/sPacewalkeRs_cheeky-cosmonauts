@@ -9,7 +9,8 @@ library(lubridate)
 library(tidyr)
 library(knitr)
 
-output_dir <- '/home/sarah/Projects/spacewalk-analysis/results/figures/'
+dir.create("results/figures", showWarnings = FALSE, recursive = TRUE)
+output_dir <- 'results/figures/'
 
 df <- fromJSON("data/data.json", flatten = TRUE)
 df$date <- as.Date(df$date)
