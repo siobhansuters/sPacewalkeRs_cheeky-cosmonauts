@@ -24,7 +24,7 @@ parse_duration <- function(d) {
 
 # df$duration_mins <- sapply(df$duration, parse_duration)
 
-colour_map <- c("USA" = "#e41a1c", "Russia" = "#4daf4a")
+colour_map <- c("USA" = "#DC267F", "Russia" = "#FFB000")
 
 # --------------------------------------------------
 # Figure 1: Annual EVA frequency by country
