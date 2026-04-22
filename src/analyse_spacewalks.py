@@ -51,6 +51,8 @@ df_dur = df_dur.sort_values('date')
 df_dur['cumulative_hrs'] = df_dur['duration_hrs'].cumsum()
 
 fig1, ax1 = plt.subplots(figsize=(8, 4))
+ax1.set_xlabel('year')
+ax1.set_ylabel('cumulative EVA hours')
 ax1.plot(df_dur['date'], df_dur['cumulative_hrs'], color='black', linewidth=1.5)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
@@ -71,6 +73,8 @@ usa_dur = df_dist[df_dist['country'] == 'USA']['duration_hrs']
 rus_dur = df_dist[df_dist['country'] == 'Russia']['duration_hrs']
 
 fig2, ax2 = plt.subplots(figsize=(8, 4))
+ax2.set_xlabel('EVA Duration (hours)')
+ax2.set_ylabel('Country')
 ax2.hist(usa_dur, bins=25, alpha=0.6, color=colour_usa, label='USA')
 ax2.hist(rus_dur, bins=25, alpha=0.6, color=colour_russia, label='Russia')
 ax2.legend()
@@ -102,6 +106,8 @@ df_astro = df_astro.sort_values('duration_hrs', ascending=False).head(10)
 df_astro = df_astro.sort_values('duration_hrs', ascending=True)
 
 fig3, ax3 = plt.subplots(figsize=(8, 5))
+ax3.set_xlabel('total EVA hours')
+ax3.set_ylabel('astronaut')
 ax3.barh(df_astro['astronaut'], df_astro['duration_hrs'], color=colour_usa)
 ax3.spines['top'].set_visible(False)
 ax3.spines['right'].set_visible(False)
